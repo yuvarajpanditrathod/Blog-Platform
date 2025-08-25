@@ -97,101 +97,6 @@
 
 ## 🏗️ Project Architecture
 
-### **Backend Structure**
-```
-Backend/
-├── Controllers/          # Business logic handlers
-│   ├── auth.js          # Authentication controllers
-│   ├── story.js         # Story management
-│   ├── user.js          # User operations
-│   └── comment.js       # Comment system
-├── Models/              # Database schemas
-│   ├── user.js          # User model
-│   ├── story.js         # Story model
-│   └── comment.js       # Comment model
-├── Middlewares/         # Custom middleware
-│   ├── Authorization/   # Auth middleware
-│   ├── database/        # DB middleware
-│   └── Errors/          # Error handling
-├── Helpers/             # Utility functions
-│   ├── auth/           # Auth helpers
-│   ├── database/       # DB helpers
-│   ├── error/          # Error helpers
-│   ├── input/          # Validation helpers
-│   ├── Libraries/      # External integrations
-│   └── query/          # Query helpers
-├── Routers/            # API routes
-└── public/             # Static files
-    ├── storyImages/    # Story images
-    └── userPhotos/     # User avatars
-```
-
-### **Frontend Structure**
-```
-Frontend/
-├── src/
-│   ├── components/
-│   │   ├── AuthScreens/     # Authentication pages
-│   │   ├── StoryScreens/    # Story-related components
-│   │   ├── CommentScreens/  # Comment system
-│   │   ├── ProfileScreens/  # User profile management
-│   │   ├── GeneralScreens/  # Common components
-│   │   └── Routing/         # Route protection
-│   ├── Context/             # React Context API
-│   ├── Css/                # Custom styles
-│   └── Testing/            # Test components
-└── public/                 # Static assets
-```
-
-### **Database Schema**
-
-#### User Model
-```javascript
-{
-  username: String (required),
-  email: String (required, unique, @kletech.ac.in domain),
-  password: String (hashed, min 6 chars),
-  photo: String (default: "user.png"),
-  role: String (enum: ["user", "admin"]),
-  readList: [ObjectId] (references to Story),
-  readListLength: Number,
-  resetPasswordToken: String,
-  resetPasswordExpire: Date,
-  timestamps: true
-}
-```
-
-#### Story Model
-```javascript
-{
-  author: ObjectId (reference to User),
-  slug: String (auto-generated),
-  title: String (required, unique, min 4 chars),
-  content: String (required, min 10 chars),
-  image: String (default: "default.jpg"),
-  readtime: Number (auto-calculated),
-  likes: [ObjectId] (references to User),
-  likeCount: Number,
-  comments: [ObjectId] (references to Comment),
-  commentCount: Number,
-  timestamps: true
-}
-```
-
-#### Comment Model
-```javascript
-{
-  story: ObjectId (reference to Story),
-  content: String (required, min 3 chars),
-  author: ObjectId (reference to User),
-  likes: [ObjectId] (references to User),
-  likeCount: Number,
-  star: Number (rating 0-5),
-  timestamps: true
-}
-```
-
----
 
 ## 🚀 Installation & Setup
 
@@ -217,11 +122,6 @@ PORT=5000
 NODE_ENV=development
 MONGO_URI=mongodb://localhost:27017/kle-tech-blog
 JWT_SECRET_KEY=your_jwt_secret_key
-JWT_EXPIRE=30d
-RESET_PASSWORD_EXPIRE=3600000
-EMAIL_USERNAME=your_email@gmail.com
-EMAIL_PASSWORD=your_app_password
-URI=http://localhost:3000
 
 # 4. Start the backend server
 npm start
@@ -265,18 +165,6 @@ MONGO_URI=mongodb://localhost:27017/kle-tech-blog
 
 # JWT Configuration
 JWT_SECRET_KEY=your_super_secret_jwt_key_here
-JWT_EXPIRE=30d
-
-# Password Reset
-RESET_PASSWORD_EXPIRE=3600000
-
-# Email Configuration (for password reset)
-EMAIL_USERNAME=your_email@gmail.com
-EMAIL_PASSWORD=your_app_specific_password
-URI=http://localhost:3000
-
-# File Upload Limits
-MAX_FILE_SIZE=5242880  # 5MB
 ```
 
 ### **Frontend Proxy Configuration**
@@ -364,7 +252,7 @@ python run_all_tests.py
 - ✅ Password reset workflow
 
 ### **Manual Testing Checklist**
-- [ ] User registration with non-KLE email (should fail)
+- [ ] User registration
 - [ ] Password strength validation
 - [ ] Image upload size limits
 - [ ] Responsive design on different screen sizes
@@ -396,58 +284,6 @@ python run_all_tests.py
 
 ---
 
-## 🌐 Deployment
-
-### **Production Deployment**
-
-#### **Backend Deployment (Node.js)**
-```bash
-# 1. Set production environment variables
-NODE_ENV=production
-MONGO_URI=your_production_mongodb_uri
-JWT_SECRET_KEY=your_production_jwt_secret
-
-# 2. Install PM2 for process management
-npm install -g pm2
-
-# 3. Start application with PM2
-pm2 start server.js --name "kle-tech-blog-api"
-pm2 startup
-pm2 save
-```
-
-#### **Frontend Deployment**
-```bash
-# 1. Build for production
-npm run build
-
-# 2. Deploy to hosting service
-# (Netlify, Vercel, AWS S3, etc.)
-```
-
-#### **Database Deployment**
-- **MongoDB Atlas**: Cloud-based MongoDB hosting
-- **Local MongoDB**: Self-hosted MongoDB instance
-- **Docker**: Containerized deployment option
-
-### **Environment-Specific Configurations**
-
-#### **Development**
-```env
-NODE_ENV=development
-MONGO_URI=mongodb://localhost:27017/kle-tech-blog-dev
-URI=http://localhost:3000
-```
-
-#### **Production**
-```env
-NODE_ENV=production
-MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/kle-tech-blog
-URI=https://your-domain.com
-```
-
----
-
 ## 📊 Performance Optimizations
 
 ### **Backend Optimizations**
@@ -463,28 +299,6 @@ URI=https://your-domain.com
 - **Bundle Size**: Optimized webpack configuration
 - **Caching**: Browser caching strategies
 - **Responsive Images**: Multiple image sizes for different devices
-
----
-
-## 🤝 Contributing
-
-### **Development Workflow**
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-### **Code Standards**
-- **ESLint**: JavaScript linting and formatting
-- **Prettier**: Code formatting consistency
-- **Comment Standards**: Comprehensive code documentation
-- **Git Conventions**: Conventional commit messages
-
-### **Feature Requests**
-- Create detailed issues with feature descriptions
-- Include use cases and potential implementations
-- Discuss with maintainers before implementation
 
 ---
 
@@ -577,8 +391,7 @@ This project is licensed under the **ISC License** - see the LICENSE file for de
 ## 👥 Team & Contributors
 
 ### **Project Team**
-- **Lead Developer**: Yuvaraj Panditrathod (@yuvarajpanditrathod)
-- **Original Author**: Gilbert Hutapea
+- **Lead Developer**: Yuvaraj Pandit Rathod (@yuvarajpanditrathod)
 - **Institution**: KLE Technological University
 
 ### **Acknowledgments**
@@ -590,15 +403,9 @@ This project is licensed under the **ISC License** - see the LICENSE file for de
 
 ## 📞 Support & Contact
 
-### **Support Channels**
-- **GitHub Issues**: For bug reports and feature requests
-- **Email**: [Contact via KLE Tech email]
-- **Documentation**: Comprehensive README and code comments
-
 ### **Resources**
 - **GitHub Repository**: [Repository Link]
-- **Live Demo**: [Demo Link if available]
-- **API Documentation**: [API Docs Link if available]
+- **Documentation**: [API Docs Link if available]
 
 ---
 
@@ -608,12 +415,8 @@ This project is licensed under the **ISC License** - see the LICENSE file for de
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202025-orange)
 
-### **Current Version**: 1.0.0
-### **Release Date**: January 2025
-### **Maintenance Status**: Active Development
-
 ---
 
-**Made with ❤️ for KLE Technological University**
+**Made with ❤️ Yuvaraj P Rathod**
 
 *This README provides comprehensive documentation for the KLE Tech Blog Platform. For additional information or support, please refer to the project repository or contact the development team.*
