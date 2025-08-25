@@ -1,11 +1,21 @@
 # 🎓 KLE Tech Blog Platform
 
-![KLE Tech Blog](https://img.shields.io/badge/KLE%20Tech-Blog%20Platform-blue?style=for-the-badge)
-![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+[![KLE Tech Blog](https://img.shields.io/badge/KLE%20Tech-Blog%20Platform-blue?style=for-the-badge)](https://www.kletech.ac.in/)
+[![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://www.mongodb.com/mern-stack)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://expressjs.com/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![CKEditor](https://img.shields.io/badge/CKEditor-0288D1?style=for-the-badge&logo=ckeditor&logoColor=white)](https://ckeditor.com/)
+[![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)](https://axios-http.com/)
+[![Nodemailer](https://img.shields.io/badge/Nodemailer-009688?style=for-the-badge&logo=gmail&logoColor=white)](https://nodemailer.com/about/)
+[![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![PM2](https://img.shields.io/badge/PM2-2B037A?style=for-the-badge&logo=pm2&logoColor=white)](https://pm2.keymetrics.io/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+
 
 ## 📌 Overview
 
@@ -22,7 +32,7 @@
 ## ✨ Key Features
 
 ### 🔐 **Authentication & Authorization**
-- **Secure Registration**: Email verification with KLE Tech domain restriction (`@kletech.ac.in`)
+- **Secure Registration**: Email verification
 - **JWT Authentication**: Stateless authentication with secure token management
 - **Password Security**: BCrypt hashing with salt rounds
 - **Password Recovery**: Email-based password reset functionality
