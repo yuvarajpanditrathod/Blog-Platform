@@ -109,7 +109,7 @@
 ### **Backend Setup**
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://github.com/yuvarajpanditrathod/Blog-Platform.git
 cd KLE-Tech-Blog
 
 # 2. Install backend dependencies
@@ -404,7 +404,7 @@ This project is licensed under the **ISC License** - see the LICENSE file for de
 ## 📞 Support & Contact
 
 ### **Resources**
-- **GitHub Repository**: [Repository Link]
+- **GitHub Repository**: [[Repository Link]](https://github.com/yuvarajpanditrathod/Blog-Platform.git)
 - **Documentation**: [API Docs Link if available]
 
 ---
