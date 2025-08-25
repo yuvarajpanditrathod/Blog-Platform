@@ -1,0 +1,75 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Set up Chrome driver
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+# Open the login page
+driver.get("http://localhost:3000/authlogin")
+
+# Find email and password fields and input the login credentials
+email_input = driver.find_element(By.ID, "email")
+email_input.send_keys("01fe23bcs402@kletech.ac.in")
+
+password_input = driver.find_element(By.ID, "password")
+password_input.send_keys("123")
+
+# Click the login button
+login_button = driver.find_element(By.TAG_NAME, "button")
+login_button.click()
+
+# Wait for the homepage to load
+try:
+    # Wait for an element on the homepage that would indicate login was successful
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//h2[contains(text(),'Welcome')]"))
+    )
+    print("Login test passed. Homepage loaded.")
+except:
+    print("Error: Could not detect login status or page redirect.")
+
+# Wait for the page to load and check if login was successful
+# In case you want to verify the presence of a unique homepage element, adjust the XPath or CSS selector accordingly
+
+# After login, verify redirection and check if user is redirected to the homepage
+try:
+    WebDriverWait(driver, 10).until(
+        EC.url_changes("http://localhost:3000/authlogin")  # Wait for URL to change after login
+    )
+    print("Redirect successful.")
+except:
+    print("Error: No URL change detected after login.")
+
+# Check for the successful appearance of a homepage element (for example, 'Welcome' text)
+try:
+    homepage_element = driver.find_element(By.XPATH, "//h2[contains(text(),'Welcome')]")
+    print("Successfully redirected to the homepage.")
+except:
+    print("Error: Could not find expected element on the homepage.")
+
+# Optionally, clear the input fields (if applicable)
+try:
+    email_input = driver.find_element(By.ID, "email")
+    password_input = driver.find_element(By.ID, "password")
+
+    email_input.clear()
+    password_input.clear()
+
+    email_input.send_keys("wrong@kletech.ac.in")
+    password_input.send_keys("wrongpassword")
+    login_button.click()
+
+    time.sleep(2)
+
+    error_message = driver.find_element(By.CLASS_NAME, "error_message")
+    print(f"Error message displayed: {error_message.text}")
+except Exception as e:
+    print(f"Exception occurred: {str(e)}")
+
+# Quit the driver after the test
+driver.quit()

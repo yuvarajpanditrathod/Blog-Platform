@@ -1,0 +1,169 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Container for Navbar Items */
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+/* Branding */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navigation Container */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Button positioned to the top-right corner */
+.navbar-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 45%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+}
+
+/* Button positioned to the middle of the header */
+.navbar-button1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 38%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-button1:hover {
+  background-color: #0056b3;
+}
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.hero-content {
+  z-index: 1;
+  color: #333;
+}
+
+.hero-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #0056b3;
+}
+
+/* Content Section */
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.content-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.image-section {
+  width: 50%;
+  text-align: center;
+}
+
+.image {
+  width: 80%;
+  border-radius: 8px;
+}
+
+.text-section {
+  width: 50%;
+  padding: 20px;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer-container {
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-link {
+  color: black;
+  text-decoration: none;
+}

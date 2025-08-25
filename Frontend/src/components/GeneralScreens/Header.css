@@ -1,0 +1,351 @@
+/* Header.css */
+.professional-header {
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Logo Styles */
+.logo {
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+.logo-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #4a6cf7 0%, #3b5be3 100%);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo h5 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Search Container */
+.search-container {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 2rem;
+}
+
+/* Header Options */
+.header-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Auth Options */
+.auth-options {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.create-blog-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(135deg, #4a6cf7 0%, #3b5be3 100%);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.3);
+}
+
+.create-blog-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.bookmarks-link {
+    position: relative;
+    color: #6c757d;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+
+.bookmarks-link:hover {
+    color: #4a6cf7;
+}
+
+.bookmark-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.notifications-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.notifications-btn:hover {
+    color: #4a6cf7;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    background: #e74c3c;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* User Profile */
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.avatar-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.user-profile:hover .avatar-container {
+    border-color: #4a6cf7;
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dropdown Menu */
+.profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 1rem 0;
+    width: 250px;
+    margin-top: 1rem;
+    z-index: 1000;
+    animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-header {
+    padding: 0 1.2rem 0.8rem;
+}
+
+.user-info {
+    text-align: left;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+}
+
+.user-email {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 0.5rem 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.2rem;
+    color: #495057;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+    color: #4a6cf7;
+}
+
+.dropdown-icon {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.dropdown-item:hover .dropdown-icon {
+    color: #4a6cf7;
+}
+
+.logout-item {
+    color: #e74c3c;
+}
+
+.logout-item:hover {
+    color: #c0392b;
+}
+
+/* No Auth Options */
+.no-auth-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-link {
+    color: #495057;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.6rem 0;
+    transition: color 0.2s ease;
+}
+
+.login-link:hover {
+    color: #4a6cf7;
+    text-decoration: none;
+}
+
+.register-link {
+    padding: 0.6rem 1.5rem;
+    background: linear-gradient(135deg, #4a6cf7 0%, #3b5be3 100%);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.3);
+}
+
+.register-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+    
+    .search-container {
+        margin: 0 1rem;
+        max-width: 300px;
+    }
+    
+    .create-blog-btn span,
+    .register-link span {
+        display: none;
+    }
+    
+    .create-blog-btn,
+    .register-link {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+    
+    .logo h5 {
+        font-size: 1.2rem;
+    }
+    
+    .search-container {
+        order: 3;
+        width: 100%;
+        max-width: none;
+        margin: 1rem 0 0;
+    }
+    
+    .auth-options,
+    .no-auth-options {
+        gap: 0.75rem;
+    }
+}

@@ -1,0 +1,78 @@
+/* General Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Starting Page Styles */
+  .starting-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .brand-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .intro-text {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2575fc;
+  }
+  
+  .intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .get-started-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #e85a50;
+  }
+  
+  .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
